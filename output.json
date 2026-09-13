@@ -1,7 +1,7 @@
 {
   "postman.com": {
-    "company_overview": "Postman is an API platform for building and using APIs. Postman simplifies each step of the API lifecycle and streamlines collaboration so you can create better APIs—faster.",
-    "target_audience": "Developers, API teams, and enterprises building and managing APIs.",
+    "company_overview": "Postman is an API platform that simplifies the entire API lifecycle, enabling developers to build, test, and manage APIs more efficiently. Founded by Abhinav Asthana, Ankit Sobti, and Abhijit Kane, it has become the world's leading API platform.",
+    "target_audience": "Developers, API teams, and enterprises looking to build, test, and manage APIs.",
     "contact_emails": [
       "info@postman.com",
       "info-jp@postman.com",
@@ -10,25 +10,31 @@
     "team_members": [
       {
         "name": "Abhinav Asthana",
-        "role": "CEO & Co-founder",
-        "linkedin_url": null
+        "role": "CEO",
+        "linkedin_url": "https://www.linkedin.com/in/abhinavasthana"
       },
       {
         "name": "Ankit Sobti",
         "role": "Co-founder",
-        "linkedin_url": null
+        "linkedin_url": "https://www.linkedin.com/in/ankit-sobti"
       },
       {
         "name": "Abhijit Kane",
         "role": "Co-founder",
-        "linkedin_url": null
+        "linkedin_url": "https://in.linkedin.com/in/abhijitkane"
       }
     ],
-    "confidence_score": 0.95
+    "confidence_score": 0.95,
+    "usage": {
+      "input_tokens": 5504,
+      "output_tokens": 681,
+      "total_tokens": 6185,
+      "estimated_cost_usd": 0.000617
+    }
   },
   "supabase.com": {
-    "company_overview": "Supabase is an open-source, fully managed Postgres platform that provides developers with a complete backend, including database, authentication, storage, and real-time features. It offers scalable, secure infrastructure for building applications from prototypes to production.",
-    "target_audience": "Developers, startups, agencies, enterprises, and innovation teams building AI and other applications.",
+    "company_overview": "Supabase is an open‑source, Postgres‑based developer platform that provides authentication, realtime, storage, RESTful APIs, and edge functions. It is built by developers for developers and supports building production‑ready applications.",
+    "target_audience": "Developers, startups, enterprises, and innovation teams building applications on Postgres.",
     "contact_emails": [
       "legal@supabase.com",
       "privacy@supabase.com",
@@ -37,13 +43,27 @@
       "help-events@supabase.com"
     ],
     "team_members": [],
-    "confidence_score": 0.75
+    "confidence_score": 0.8,
+    "usage": {
+      "input_tokens": 6411,
+      "output_tokens": 741,
+      "total_tokens": 7152,
+      "estimated_cost_usd": 0.000703
+    }
   },
   "vapi.ai": {
-    "company_overview": "Vapi is a voice AI platform that offers usage-based and enterprise pricing for call, SMS, and chat services. It provides scalable, secure solutions with options for HIPAA compliance and zero data retention.",
-    "target_audience": "",
-    "contact_emails": [],
+    "company_overview": "Vapi is a voice AI platform that enables developers to build, deploy, and improve voice agents quickly, with enterprise‑grade scalability and compliance. It targets enterprises and developers across industries such as healthcare, automotive, staffing, and marketplaces.",
+    "target_audience": "Enterprise customers and developers building voice AI agents across industries such as healthcare, automotive, staffing, and marketplaces.",
+    "contact_emails": [
+      "talent@vapi.ai"
+    ],
     "team_members": [],
-    "confidence_score": 0.6
+    "confidence_score": 0.8,
+    "usage": {
+      "input_tokens": 4765,
+      "output_tokens": 641,
+      "total_tokens": 5406,
+      "estimated_cost_usd": 0.00055
+    }
   }
 }

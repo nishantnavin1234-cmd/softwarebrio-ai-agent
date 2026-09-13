@@ -14,7 +14,10 @@ client = Groq(
 )
 
 
-def extract_company_intelligence(context: str) -> CompanyIntelligence:
+def extract_company_intelligence(
+    context: str
+) -> tuple[CompanyIntelligence, dict]:
+
     schema = CompanyIntelligence.model_json_schema()
 
     response = client.chat.completions.create(
@@ -56,6 +59,46 @@ def extract_company_intelligence(context: str) -> CompanyIntelligence:
         temperature=0,
     )
 
-    data = json.loads(response.choices[0].message.content)
+    data = json.loads(
+        response.choices[0].message.content
+    )
 
-    return CompanyIntelligence.model_validate(data)
+    result = CompanyIntelligence.model_validate(data)
+
+    # ---------------------------------------------
+    # Token usage
+    # ---------------------------------------------
+
+    usage = response.usage
+
+    usage_data = {
+        "input_tokens": usage.prompt_tokens if usage else 0,
+        "output_tokens": usage.completion_tokens if usage else 0,
+        "total_tokens": usage.total_tokens if usage else 0,
+    }
+
+    # ---------------------------------------------
+    # Estimated cost
+    # ---------------------------------------------
+
+    # Approximate pricing for the selected model.
+    # Kept separate so it can be updated if pricing changes.
+    input_cost_per_million = 0.075
+    output_cost_per_million = 0.30
+
+    estimated_cost = (
+        usage_data["input_tokens"]
+        / 1_000_000
+        * input_cost_per_million
+        +
+        usage_data["output_tokens"]
+        / 1_000_000
+        * output_cost_per_million
+    )
+
+    usage_data["estimated_cost_usd"] = round(
+        estimated_cost,
+        6
+    )
+
+    return result, usage_data

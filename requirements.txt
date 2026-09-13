@@ -2,3 +2,4 @@ playwright==1.62.0
 groq
 pydantic
 python-dotenv
+tavily-python==0.8.2
